@@ -2,6 +2,8 @@ const router = require("express").Router();
 const User = require("../models/User");
 const Joi = require("@hapi/joi");
 const bcrypt = require("bcrypt");
+
+const jwt = require("jsonwebtoken");
 // validacion del request
 const schemaRegister = Joi.object({
   name: Joi.string().min(6).max(255).required(),
